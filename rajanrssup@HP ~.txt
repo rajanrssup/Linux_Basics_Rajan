@@ -49,21 +49,26 @@ landscape:x:108:115::/var/lib/landscape:/usr/sbin/nologin
 rajanrssup:x:1000:1000:,,,:/home/rajanrssup:/bin/bash
 rajanrssup@HP:~$ grep "root" /etc/passwd
 root:x:0:0:root:/root:/bin/bash
-rajanrssup@HP:~$ zip -r test_dir.zip test_dir
-mkdir unzipped_dir
-unzip test_dir.zip -d unzipped_dir
-ls -R unzipped_dir
-Command 'zip' not found, but can be installed with:
-sudo apt install zip
-Command 'unzip' not found, but can be installed with:
-sudo apt install unzip
+rajanrssup@HP:~$ zip -r test_dir.zop test_dir
+  adding: test_dir/ (stored 0%)
+  adding: test_dir/rename_example.txt (stored 0%)
+  adding: test_dir/renamed_example.txt (stored 0%)
+  adding: test_dir/renamed_folder.txt (stored 0%)
+rajanrssup@HP:~$ mkdir unzipped_dir
+mkdir: cannot create directory ‘unzipped_dir’: File exists
+rajanrssup@HP:~$ unzip test_dir.zip -d unzipped_dir
+Archive:  test_dir.zip
+   creating: unzipped_dir/test_dir/
+ extracting: unzipped_dir/test_dir/rename_example.txt
+ extracting: unzipped_dir/test_dir/renamed_example.txt
+ extracting: unzipped_dir/test_dir/renamed_folder.txt
+rajanrssup@HP:~$ ls -R unzipped_dir
 unzipped_dir:
-rajanrssup@HP:~$ wget https://example.com/sample.txt
---2026-09-07 12:55:30--  https://example.com/sample.txt
-Resolving example.com (example.com)... 104.20.23.154, 172.66.147.243, 2606:4700:9645:72db:f264:deb:ef6b:ff98
-Connecting to example.com (example.com)|104.20.23.154|:443... connected.
-HTTP request sent, awaiting response... 404 Not Found
-2026-09-07 12:55:31 ERROR 404: Not Found.
+test_dir
+
+unzipped_dir/test_dir:
+rename_example.txt  renamed_example.txt  renamed_folder.txt
+rajanrssup@HP:~$
 
 rajanrssup@HP:~$ touch secure.txt
 chmod 444 secure.txt
