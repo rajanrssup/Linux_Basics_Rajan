@@ -1,2 +1,83 @@
 # Linux_Basics_Rajan
 Basic Command of Linux for DevOps
+
+rajanrssup@HP:~$ mkdir test_dir
+touch test_dir/example.txt
+mv test_dir/example.txt test_dir/renamed_example.txt
+ls -l test_dir
+mkdir: cannot create directory ‘test_dir’: File exists
+total 0
+-rw-r--r-- 1 rajanrssup rajanrssup 0 Sep  7 12:52 renamed_example.txt
+-rw-r--r-- 1 rajanrssup rajanrssup 0 Sep  7 12:04 renamed_folder.txt
+rajanrssup@HP:~$ cat /etc/passwd
+head -n 5 /etc/passwd
+tail -n 5 /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:102:105::/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:103:106:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+syslog:x:104:111::/home/syslog:/usr/sbin/nologin
+_apt:x:105:65534::/nonexistent:/usr/sbin/nologin
+uuidd:x:106:112::/run/uuidd:/usr/sbin/nologin
+tcpdump:x:107:113::/nonexistent:/usr/sbin/nologin
+landscape:x:108:115::/var/lib/landscape:/usr/sbin/nologin
+rajanrssup:x:1000:1000:,,,:/home/rajanrssup:/bin/bash
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+_apt:x:105:65534::/nonexistent:/usr/sbin/nologin
+uuidd:x:106:112::/run/uuidd:/usr/sbin/nologin
+tcpdump:x:107:113::/nonexistent:/usr/sbin/nologin
+landscape:x:108:115::/var/lib/landscape:/usr/sbin/nologin
+rajanrssup:x:1000:1000:,,,:/home/rajanrssup:/bin/bash
+rajanrssup@HP:~$ grep "root" /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+rajanrssup@HP:~$ zip -r test_dir.zop test_dir
+  adding: test_dir/ (stored 0%)
+  adding: test_dir/rename_example.txt (stored 0%)
+  adding: test_dir/renamed_example.txt (stored 0%)
+  adding: test_dir/renamed_folder.txt (stored 0%)
+rajanrssup@HP:~$ mkdir unzipped_dir
+mkdir: cannot create directory ‘unzipped_dir’: File exists
+rajanrssup@HP:~$ unzip test_dir.zip -d unzipped_dir
+Archive:  test_dir.zip
+   creating: unzipped_dir/test_dir/
+ extracting: unzipped_dir/test_dir/rename_example.txt
+ extracting: unzipped_dir/test_dir/renamed_example.txt
+ extracting: unzipped_dir/test_dir/renamed_folder.txt
+rajanrssup@HP:~$ ls -R unzipped_dir
+unzipped_dir:
+test_dir
+
+unzipped_dir/test_dir:
+rename_example.txt  renamed_example.txt  renamed_folder.txt
+rajanrssup@HP:~$
+
+rajanrssup@HP:~$ touch secure.txt
+chmod 444 secure.txt
+ls -l secure.txt
+-r--r--r-- 1 rajanrssup rajanrssup 0 Sep  7 12:55 secure.txt
+rajanrssup@HP:~$ export MY_VAR="Hello, Linux!"
+echo "$MY_VAR"
+Hello, Linux!
+rajanrssup@HP:~$
